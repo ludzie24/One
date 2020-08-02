@@ -6,7 +6,7 @@
 </head>
 <body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<form action="backend.php" method="POST" enctype="multipart/form-data">
+<form action="backend.php" method="POST" enctype="multipart/form-data" id="formid">
 <div class="main">
     <div class="main-table">
         <div class="data-table">           
