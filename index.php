@@ -5,6 +5,7 @@
  <link rel="stylesheet" href="assets/css/styles.css"/>
 </head>
 <body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <form action="backend.php" method="POST" enctype="multipart/form-data">
 <div class="main">
     <div class="main-table">
@@ -48,8 +49,7 @@
     </div>   
 </div>
 </form>
-</body>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="assets/js/scripts.js"></script>
+ <?php session_destroy()?>
+</body>
 </html>
-<?php session_destroy()?>
