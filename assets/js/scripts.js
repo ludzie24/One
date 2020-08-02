@@ -142,11 +142,11 @@ $("#formid").on("submit",function(e){
     var emailCharacters = ["@","."];
     var illegalCharacters = /[<->]/g;
     displayError(checkName(name),"alert-name");
-    displayError(checkName(surname);,"alert-surname")
-    displayError( checkName(nick);,"alert-nick")
-    displayError(checkPassword(password);,"alert-password")
-    displayError(checkOnlyNumbers(number);,"alert-number")
-    displayError(checkEmail(email);,"alert-email")
+    displayError(checkName(surname),"alert-surname")
+    displayError( checkName(nick),"alert-nick")
+    displayError(checkPassword(password),"alert-password")
+    displayError(checkOnlyNumbers(number),"alert-number")
+    displayError(checkEmail(email),"alert-email")
     if(errCount>0){
         e.preventDefault();
 });
