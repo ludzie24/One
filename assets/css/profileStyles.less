@@ -1,0 +1,96 @@
+*,:before, :after {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    }
+    .main{
+        width: 100%;
+        height: 100%;
+        background-color: rgb(9, 65, 9);
+        display: flex;
+        flex-direction: column;
+        .upper{
+            width: 100%;
+            height: 25%;
+            display: flex;
+            justify-content: space-between;
+            border-bottom:1px solid rgb(255, 255, 255);;
+            .boxUpper{
+                width: 33%;
+                height: 100%;
+                h2{
+                    font-size: 45px;
+                    letter-spacing: -2px;
+                    line-height: 1;
+                    color: white;
+                    text-transform: uppercase;
+                    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+                }
+            }
+            #leftu{
+                display: flex;
+                align-items: flex-end;
+                justify-content: center;
+            }
+            #images{
+                border:2px solid rgb(255, 255, 255);
+                margin-bottom: 5px;
+            }
+            #centeru{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+        .center{
+            width: 100%;
+            height: 50%;
+            display: flex;
+            justify-content: start;
+            .boxCenter{
+                width: 33%;
+                height: 100%;
+            }
+            .letter{
+                height: 30px;
+                width: 80%;
+                border-bottom:1px solid rgb(255, 255, 255);
+                color: white;
+                padding-left: 10px;
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;                
+                display: flex;
+                justify-content: right; 
+            }
+            #leftc{
+                border-right:1px solid rgb(255, 255, 255);
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+                align-items: center;
+            }
+            #name{
+                display: flex;
+                justify-content: right;     
+            }
+            #output{
+                width: 100%;
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+                padding-right: 20px;
+            }
+        }
+        .lower{
+            width: 100%;
+            height: 30%;
+            display: flex;
+            justify-content: start;
+            .boxLower{
+                width: 33%;
+                height: 100%;
+            }
+            #leftl{
+                border-right:1px solid rgb(255, 255, 255);
+            }
+        }
+    }
