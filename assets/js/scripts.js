@@ -1,8 +1,4 @@
-document.getElementById("get-info").addEventListener("click", myFunction);
-function myFunction(){
-
-};
-$("#get-info").on("click",function(e){
+$("#formid").on("submit",function(e){
     let name = $("#name-get").val();
     let surname = $("#surname-get").val();
     let nick = $("#nick-get").val();
