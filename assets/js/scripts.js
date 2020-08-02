@@ -1,19 +1,5 @@
-$("#formid").on("submit",function(e){
-    let name = $("#name-get").val();
-    let surname = $("#surname-get").val();
-    let nick = $("#nick-get").val();
-    let password = $("#password-get").val();
-    let number = $("#number-get").val();
-    let email = $("#email-get").val();
-    let statusName;
-    let statusSurname;
-    let statusNick;
-    let statusPassword;
-    let statusNumber;
-    let statusEmail;
-    var emailCharacters = ["@","."];
-    var illegalCharacters = /[<->]/g;
-    function checkIllegalCharacters(word,table){
+let errCount = 0;
+function checkIllegalCharacters(word,table){
             if (word.match(table)){
                 return  false;
             }else{
@@ -125,32 +111,42 @@ $("#formid").on("submit",function(e){
             statusNumber = false; 
         };
         statusIllegalCharacters = checkIllegalCharacters(inputPassword,illegalCharacters);
-        console.log(statusIllegalCharacters);
         if (statusLenght == true && statusBigLetter == true && statusSmallLetter == true && statusNumber == true && statusIllegalCharacters ==true){
             return true;
         }else{
             return false;
         };
     };
-    statusName = checkName(name);
-    statusSurname = checkName(surname);
-    statusNick = checkName(nick);
-    statusPassword = checkPassword(password);
-    statusNumber = checkOnlyNumbers(number);
-    statusEmail = checkEmail(email);
-    displayError(statusName,"alert-name");
-    displayError(statusSurname,"alert-surname")
-    displayError(statusNick,"alert-nick")
-    displayError(statusPassword,"alert-password")
-    displayError(statusNumber,"alert-number")
-    displayError(statusEmail,"alert-email")
-    function displayError(status,id){
+function displayError(status,id){
         let htmlid = "#"+id;
         if(status == false){
             $(htmlid).css("display", "inline");
-            event.preventDefault();
+            errCount++;
         }else{
             $(htmlid).css("display", "none");
         };
     };
+$("#formid").on("submit",function(e){
+    let name = $("#name-get").val();
+    let surname = $("#surname-get").val();
+    let nick = $("#nick-get").val();
+    let password = $("#password-get").val();
+    let number = $("#number-get").val();
+    let email = $("#email-get").val();
+    let statusName;
+    let statusSurname;
+    let statusNick;
+    let statusPassword;
+    let statusNumber;
+    let statusEmail;
+    var emailCharacters = ["@","."];
+    var illegalCharacters = /[<->]/g;
+    displayError(checkName(name),"alert-name");
+    displayError(checkName(surname);,"alert-surname")
+    displayError( checkName(nick);,"alert-nick")
+    displayError(checkPassword(password);,"alert-password")
+    displayError(checkOnlyNumbers(number);,"alert-number")
+    displayError(checkEmail(email);,"alert-email")
+    if(errCount>0){
+        e.preventDefault();
 });
