@@ -78,32 +78,32 @@ function uploadFile(){
     $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
     if(isset($_POST["submit"])) {
-    $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
-    if($check !== false) {
-        $uploadOk = 1;
-    } else {
-        $uploadOk = 0;
-    };
+        $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+        if($check !== false) {
+            $uploadOk = 1;
+        } else {
+            $uploadOk = 0;
+        };
     };
     if (file_exists($target_file)) {
-    $uploadOk = 0;
+        $uploadOk = 0;
     };
     if ($_FILES["avatar"]["size"] > 10240) {
-    $uploadOk = 0;
+        $uploadOk = 0;
     };
     if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-    && $imageFileType != "gif" ) {
-    $uploadOk = 0;
-    };
+        && $imageFileType != "gif" ) {
+        $uploadOk = 0;
+        };
     if ($uploadOk == 0) {
-    } else {
-    if (move_uploaded_file($_FILES["avatar"]["tmp_name"], $target_file)) {
-        $image=$_FILES["avatar"]["name"]; 
-        $img="assets/img/".$image;
-        $im1 ='<img src="'.$img.'">';
-        echo'<img src="'.$img.'">';
-        return true;
-    } else {
+        }else{
+        if (move_uploaded_file($_FILES["avatar"]["tmp_name"], $target_file)) {
+            $image=$_FILES["avatar"]["name"]; 
+            $img="assets/img/".$image;
+            $im1 ='<img src="'.$img.'">';
+            echo'<img src="'.$img.'">';
+            return true;
+    }else{
         return false;
     };
     };
@@ -116,8 +116,7 @@ $statusNumber = checkNumber($number);
 $statusEmail = checkEmail($email,3,30,$illegalCharacters,$emailCharacters);
 $statusFile = uploadFile();
 
-if ($statusName == true and $statusSurName == true and $statusNick == true and $statusPassword == true and $statusNumber == true and $statusEmail == true){
-    fclose($myfile);
+if ($statusName and $statusSurName and $statusNick and $statusPassword and $statusNumber and $statusEmail){
     $_SESSION["name"] = $_POST['namePhp'];
     $_SESSION["surname"] = $_POST['surnamePhp'];
     $_SESSION["nick"] = $_POST['nickPhp'];
