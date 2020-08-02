@@ -149,4 +149,5 @@ $("#formid").on("submit",function(e){
     displayError(checkEmail(email),"alert-email")
     if(errCount>0){
         e.preventDefault();
+    };
 });
