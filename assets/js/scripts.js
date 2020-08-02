@@ -1,3 +1,5 @@
+var emailCharacters = ["@","."];
+var illegalCharacters = /[<->]/g;
 let errCount = 0;
 function checkIllegalCharacters(word,table){
             if (word.match(table)){
@@ -48,7 +50,7 @@ function checkIllegalCharacters(word,table){
             statusLenght = true;          
         }
         let statuscontents = alphanumeric(name);
-        if(statusLenght == true && statuscontents == true){
+        if(statusLenght && statuscontents){
             return true;
         }else{
             return false;
@@ -66,7 +68,7 @@ function checkIllegalCharacters(word,table){
         }     
         statusIllegalCharacters=checkIllegalCharacters(email,illegalCharacters)
         statusAllowedCharacters = checkAllowedCharacters(email,emailCharacters);
-        if(statusLenght == true && statusIllegalCharacters == true && statusAllowedCharacters == true){
+        if(statusLenght && statusIllegalCharacters && statusAllowedCharacters){
             return true;
         }else{
             return false;
@@ -111,7 +113,7 @@ function checkIllegalCharacters(word,table){
             statusNumber = false; 
         };
         statusIllegalCharacters = checkIllegalCharacters(inputPassword,illegalCharacters);
-        if (statusLenght == true && statusBigLetter == true && statusSmallLetter == true && statusNumber == true && statusIllegalCharacters ==true){
+        if (statusLenght && statusBigLetter && statusSmallLetter && statusNumber && statusIllegalCharacters){
             return true;
         }else{
             return false;
@@ -133,14 +135,6 @@ $("#formid").on("submit",function(e){
     let password = $("#password-get").val();
     let number = $("#number-get").val();
     let email = $("#email-get").val();
-    let statusName;
-    let statusSurname;
-    let statusNick;
-    let statusPassword;
-    let statusNumber;
-    let statusEmail;
-    var emailCharacters = ["@","."];
-    var illegalCharacters = /[<->]/g;
     displayError(checkName(name),"alert-name");
     displayError(checkName(surname),"alert-surname")
     displayError( checkName(nick),"alert-nick")
@@ -149,5 +143,6 @@ $("#formid").on("submit",function(e){
     displayError(checkEmail(email),"alert-email")
     if(errCount>0){
         e.preventDefault();
+        errCount = 0;
     };
 });

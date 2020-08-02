@@ -49,7 +49,7 @@
     </div>   
 </div>
 </form>
-<script src="assets/js/scripts.js"></script>
+<script src="assets/js/scripts.min.js"></script>
  <?php session_destroy()?>
 </body>
 </html>
